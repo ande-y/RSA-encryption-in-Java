@@ -40,13 +40,18 @@ These program will:
 
 It should then, given enough times, output all values of this key & also decrypt the cypher.
 
+### `ResultWriter.java`
+
+This program written to automate some steps in an in-class RSA key cracking contest. It contains a single function used by all key cracking programs. The function quickly dumps the contents of a cracked key into a .txt file.  
+
 ### `rsaCracker_countFromStart.java`
 
-This program utilizes the simple method checking if any number counting down from root(n) can divide n without leaving a remainder. There are minor optimizations, like skipping non-prime numbers (even numbers or numbers that end in "0" or "5").
+This program utilizes the simple method checking if any number counting down from root(`n`) can divide `n` without leaving a remainder. There are minor optimizations, like skipping non-prime numbers (even numbers or numbers that end in "0" or "5").
 
 ### `rsaCracker_memoized.java`
 
-Within the "primes" folder contains 4550 txt files of prime numbers up to 10 billion. This program utilizes this folder & therefore does not need to calculate prime numbers at runtime. Though this program can crack keys quite fast, it is limited to cracking keys using prime numbers no larger than 10 billion (~30 bits).
+Within the "primes" folder contains 4550 txt files of prime numbers up to 10 billion. This program utilizes this folder & so it has a slight speed advantage since it does not need to check for prime numbers at runtime. However, This program is limited to cracking keys using prime numbers no larger than 10 billion (~30 bits).  
+Since the prime numbers are stored in text, the space needed for memoization is astronomical compared to storing them in binary. Despite that, storing everything in text is much less work when it comes to writing code for the program to parse the prime numbers from the file.
 
 ### `rsaCracker_nextProbPrime.java`
 
@@ -55,10 +60,6 @@ This program is inverse of rsaCracker_countFromStart.java. Rather than count dow
 ### `rsaCracker_perfectSquares.java`
 
 This program utilizes an algorithm showcased on the YouTube channel: [Numberphile](https://youtu.be/-ShwJqAalOk). Rather than checking for primes per iteration, the algorithm checks for perfect squares. This algorithm is much faster than one that check for primes. This algorithm is also especially fast for RSA keys whose prime numbers are relatively "close" to one another.
-
-### `ResultWriter.java`
-
-This program contains 1 function used by the key cracking program. The method is used to quickly dump the contents of a cracked key into a txt file. This program was used for a hacking contest. 
 
 ## Others
 
