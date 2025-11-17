@@ -14,7 +14,7 @@ public class rsaGenerator {
     
     public static BigInteger getCoprime(BigInteger zCopy){
         BigInteger ans = new BigInteger("2");
-        ans = ans.add(BigInteger.probablePrime(2000, rand));
+        ans = ans.add(BigInteger.probablePrime(40, rand));
         for (boolean chosen = false; !chosen; ans = ans.add(one)){
             BigInteger D = ans;
             BigInteger z = zCopy;
