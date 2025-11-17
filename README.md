@@ -14,15 +14,19 @@ This file is to generate a RSA encyption key, which includes:
 By default, this file will generate keys using 40 bit primes, the `D` will also be 40 bits by default.  
 You may edit the code below the `main` function to specify the size of primes you'd like, same with `D`, under .
   
-`public static void main(String[] arg){`
-`	BigInteger P = BigInteger.probablePrime(**40**, rand);`  
-`	BigInteger Q = BigInteger.probablePrime(**40**, rand);`  
-`	...`  
+```java
+public static void main(String[] arg){
+	BigInteger P = BigInteger.probablePrime(**40**, rand);
+	BigInteger Q = BigInteger.probablePrime(**40**, rand);
+	...
+```
   
-`public static BigInteger getCoprime(BigInteger zCopy){`  
-`       BigInteger ans = new BigInteger("2");`  
-`       ans = ans.add(BigInteger.probablePrime(**40**, rand));`  
-`	...`  
+```java
+public static BigInteger getCoprime(BigInteger zCopy){
+        BigInteger ans = new BigInteger("2");
+        ans = ans.add(BigInteger.probablePrime(**40**, rand));
+	...
+```
 
 ## Key Crackers
 
